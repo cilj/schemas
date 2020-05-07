@@ -1,0 +1,78 @@
+---
+layout: default
+contributors:
+  - name: Jeff Doolittle
+    ghuser: jeffdoolittle
+---
+
+{% include fork_me_on_github.html %}
+
+{% for family in site.data._schema_index.families %}
+{% if family.noContent %}
+{% else %}
+{% include schema_family.html family=family is_summary=1 %}
+{% endif %}
+{% endfor %}
+
+<h2>Other files</h2>
+
+A full index of all available schemas in json format: <a href="index.json">index.json</a>
+
+<h2>About Cilj Schemas</h2>
+
+<p>
+  The Cilj Schemas project provides a repository for the public hosting of shared
+  schemas for a variety of domains and applications.
+</p>
+
+<h3>Contributors</h3>
+
+<div class="m-bottom-xl">
+  <ul>
+    {% for c in page.contributors %}
+    <div class="contributor">    
+        <img width=64 height=64 src="https://github.com/{{c.ghuser}}.png?size=460" />
+        <a href="https://github.com/{{c.ghuser}}">{{c.name}}</a>
+    </div>
+  {% endfor %}
+  </ul>
+</div>
+
+<h2>Why Cilj?</h2>
+
+<h3>Definerati si cilj. Kaj je vaš cilj?</h3>
+
+<div class="definition">
+  <div class=word>Cilj</div>
+  <div class="pronunciation">/t͡síːl/ (tseal)</div>
+  <div class="description">Goal, target (Slovene)</div>
+</div>
+
+<div class="definition">
+  <div class=word>Definirati</div>
+  <div class="pronunciation">/definǐːˈrati/ (de-fin-i-ra-ti)</div>
+  <div class="description">Define (Slovene)</div>
+</div>
+
+<div class="definition">
+  <div class=word>Some Uses:</div>
+</div>
+
+<ul>
+  <li>Definerati si cilj - Define your goal.</li>
+  <li>Določite cilj - Set a goal.</li>
+  <li>Kaj je vaš cilj? - What is your goal?</li>
+  <li>Lahko določite svoj cilj? - Can you define your goal?</li>
+  <li>Kaj si prizadevate doseči? - What are you trying to achieve?</li>
+  <li>Cilj si postavite visoko - Set your goal high.</li>
+  <li>Lahko si postavite svoj cilj. - You can set your own goal.</li>
+  <li>Zastavite si cilj visoko in ne ustavite, dokler ga ne dosežete. - Set a goal high and don’t stop until you reach
+    it.</li>
+</ul>
+
+<a target="_blank" href="https://en.wiktionary.org/wiki/Appendix:Slovene_pronunciation">Wiktionary: Slovene
+  Pronunciation</a>
+
+<hr />
+
+<div class="last-updated">Last updated: {{ site.time | date: '%A, %B %e, %Y at %l:%M:%S %p %Z' }}</div>

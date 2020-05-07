@@ -1,0 +1,66 @@
+{
+  "families": [
+    {
+      "desc": "Project management schemas",
+      "folder": "pm",
+      "name": "Project Management",
+      "uri": "https://cilj.github.io/schemas/pm",
+      "path": "/schemas/pm",
+      "children": [
+        {
+          "uri": "https://cilj.github.io/schemas/pm/project-plan",
+          "path": "/schemas/pm/project-plan",
+          "id": "project-plan",
+          "versions": [
+            {
+              "name": "0.0.1",
+              "path": "/schemas/pm/project-plan/v0_0_1",
+              "uri": "https://cilj.github.io/schemas/pm/project-plan/v0_0_1",
+              "schemas": [
+                {
+                  "uri": "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.schema.json",
+                  "path": "/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.schema.json",
+                  "fileName": "project-plan.v0_0_1.schema.json"
+                }
+              ],
+              "otherFiles": [
+                {
+                  "uri": "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example1.json",
+                  "path": "/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example1.json",
+                  "fileName": "project-plan.v0_0_1.example1.json"
+                },
+                {
+                  "uri": "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example2.json",
+                  "path": "/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example2.json",
+                  "fileName": "project-plan.v0_0_1.example2.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "desc": "Test",
+      "name": "test",
+      "folder": "test",
+      "uri": "https://cilj.github.io/schemas/test",
+      "path": "/schemas/test",
+      "children": [
+        {
+          "uri": "https://cilj.github.io/schemas/test/v0_0_1",
+          "path": "/schemas/test/v0_0_1",
+          "id": "v0_0_1",
+          "versions": []
+        },
+        {
+          "uri": "https://cilj.github.io/schemas/test/v_0_0_2",
+          "path": "/schemas/test/v_0_0_2",
+          "id": "v_0_0_2",
+          "versions": []
+        }
+      ],
+      "noContent": true
+    }
+  ]
+}

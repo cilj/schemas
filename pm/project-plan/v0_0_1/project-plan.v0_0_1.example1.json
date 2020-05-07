@@ -1,0 +1,46 @@
+{
+  "$schema":"https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.schema.json",
+  "startDate": "2020-05-01",
+  "settings": {
+    "criticalityBoundaries": [
+      {
+        "slackLimit": 1,
+        "criticalityWeight": 4.0,
+        "fibonacciWeight": "phi^3",
+        "color": {
+          "type": "argb",
+          "value": "255,0,0,0"
+        }
+      },
+      {
+        "slackLimit": 2,
+        "criticalityWeight": 3.0,
+        "fibonacciWeight": "phi^2",
+        "color": {
+          "type": "argb",
+          "value": "255,255,0,0"
+        }
+      },
+      {
+        "slackLimit": 25,
+        "criticalityWeight": 2.0,
+        "fibonacciWeight": "phi^1",
+        "color": {
+          "type": "argb",
+          "value": "255,255,215,0"
+        }
+      },
+      {
+        "slackLimit": 2147483647,
+        "criticalityWeight": 1.0,
+        "fibonacciWeight": "phi^0",
+        "color": {
+          "type": "argb",
+          "value": "255,0,128,0"
+        }
+      }
+    ]
+  },
+  "activities": [],
+  "resources": []
+}

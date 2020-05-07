@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% include fork_me_on_github.html %}
+
+{% assign path = page.url | replace: '/', '' %}
+
+{% for family in site.data._schema_index.families %}
+  {% if family.folder == path %}
+    {% include schema_family.html family=family issummary=0 %}
+  {% endif %}
+{% endfor %}
+
+

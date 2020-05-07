@@ -1,0 +1,8 @@
+families:
+  - desc: >- 
+      Project management schemas
+    folder: pm
+    name: Project Management
+  - desc: Test
+    name: test
+    folder: test

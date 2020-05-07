@@ -1,0 +1,247 @@
+{
+  "$id": "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.schema.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema#",
+  "description": "A representation of a project plan",
+  "examples": [
+    "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example1.json",
+    "https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.example2.json"
+  ],
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "headers": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+      }
+    },
+    "color": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "argb",
+            "hsl",
+            "hsla",
+            "rgb",
+            "rgba"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "default": {
+        "type": "argb",
+        "value": "255,0,0,0"
+      }
+    },
+    "criticalityBoundary": {
+      "type": "object",
+      "properties": {
+        "slackLimit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "criticalityWeight": {
+          "type": "number"
+        },
+        "fibonacciWeight": {
+          "type": "string",
+          "enum": [
+            "phi^0",
+            "phi^1",
+            "phi^2",
+            "phi^3",
+            "phi^4",
+            "phi^5"
+          ]
+        },
+        "color": {
+          "$ref": "#/definitions/color"
+        }
+      },
+      "required": [
+        "slackLimit",
+        "criticalityWeight",
+        "fibonacciWeight"
+      ]
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "allowedDurations": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "uniqueItems": true,
+          "minItems": 1,
+          "maxItems": 24
+        },
+        "criticalityBoundaries": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/definitions/criticalityBoundary"
+          }
+        },
+        "defaultResourcesCost": {
+          "type": "number",
+          "default": 1.0
+        },
+        "resourcesDisabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "criticalityBoundaries"
+      ]
+    },
+    "activity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "targetResources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "targetResourceOperator": {
+          "type": "string",
+          "enum": [
+            "and",
+            "or"
+          ],
+          "default": "and"
+        },
+        "allocatedToResources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "zeroCost": {
+          "type": "boolean"
+        },
+        "duration": {
+          "type": "integer",
+          "min": 0
+        },
+        "minimumFreeSlack": {
+          "type": "integer",
+          "min": 0
+        },
+        "minimumEarliestStartTime": {
+          "type": "integer",
+          "min": 0
+        },
+        "maximumLatestFinishTime": {
+          "type": "integer",
+          "min": 0
+        },
+        "precedesActivity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "targetResourceOperator"
+      ]
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isExplicitTarget": {
+          "type": "boolean",
+          "default": false
+        },
+        "allocationType": {
+          "type": "string",
+          "enum": [
+            "none",
+            "direct",
+            "indirect"
+          ]
+        },
+        "unitCost": {
+          "type": "number",
+          "min": 0,
+          "default": 1.0
+        },
+        "displayOrder": {
+          "type": "integer",
+          "min": 0,
+          "default": 0
+        },
+        "color": {
+          "$ref": "#/definitions/color"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    }
+  },
+  "properties": {
+    "$schema": {
+   		"type":"string",
+          "format":"uri"
+    },
+    "headers": {
+      "$ref": "#/definitions/headers"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "settings": {
+      "$ref": "#/definitions/settings"
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/activity"
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/resource"
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "startDate",
+    "settings",
+    "activities",
+    "resources"
+  ]
+}

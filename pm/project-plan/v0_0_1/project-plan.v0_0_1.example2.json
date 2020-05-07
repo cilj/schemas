@@ -1,0 +1,161 @@
+{
+  "$schema":"https://cilj.github.io/schemas/pm/project-plan/v0_0_1/project-plan.v0_0_1.schema.json",
+  "headers": {
+  },
+  "startDate": "2020-04-30",
+  "settings": {
+    "allowedDurations": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60
+    ],
+    "criticalityBoundaries": [
+      {
+        "slackLimit": 1,
+        "criticalityWeight": 4.0,
+        "fibonacciWeight": "phi^3",
+        "colorType": "argb (rgb|rgba|argb|hsl|hsla)",
+        "color": {
+          "type": "argb",
+          "value": "255,0,0,0"
+        }
+      },
+      {
+        "slackLimit": 9,
+        "criticalityWeight": 3.0,
+        "fibonacciWeight": "phi^2",
+        "colorType": "argb",
+        "color": {
+          "type": "argb",
+          "value": "255,255,0,0"
+        }
+      },
+      {
+        "slackLimit": 25,
+        "criticalityWeight": 2.0,
+        "fibonacciWeight": "phi^1",
+        "color": {
+          "type": "argb",
+          "value": "255,255,215,0"
+        }
+      },
+      {
+        "slackLimit": 2147483647,
+        "criticalityWeight": 1.0,
+        "fibonacciWeight": "phi^0",
+        "color": {
+          "type": "argb",
+          "value": "255,0,128,0"
+        }
+      }
+    ],
+    "defaultResourceCost": 1.0,
+    "resourcesDisabled": false
+  },
+  "activities": [
+    {
+      "id": "start",
+      "name": "Start",
+      "targetResources": [],
+      "targetResourceOperator": "and",
+      "allocatedToResources": [],
+      "zeroCost": false,
+      "duration": 0,
+      "minimumFreeSlack": 0,
+      "minimumEarliestStartTime": 0,
+      "maximumLatestFinishTime": 0,
+      "precedesActivity": [
+        "system-design"
+      ]
+    },
+    {
+      "id": "system-design",
+      "name": "System Design",
+      "targetResources": [
+        "architect"
+      ],
+      "targetResourceOperator": "and",
+      "allocatedToResources": [
+        "architect"
+      ],
+      "zeroCost": false,
+      "duration": 0,
+      "minimumFreeSlack": 0,
+      "minimumEarliestStartTime": 0,
+      "maximumLatestFinishTime": 0,
+      "precedesActivity": []
+    },
+    {
+      "id": "finish",
+      "name": "Finish",
+      "targetResources": [],
+      "targetResourceOperator": "and",
+      "allocatedToResources": [],
+      "hasNoCost": false,
+      "duration": 0,
+      "minimumFreeSlack": 0,
+      "minimumEarliestStartTime": 0,
+      "maximumLatestFinishTime": 0,
+      "precedesActivity": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "architect",
+      "name": "Architect",
+      "isExplicitTarget": true,
+      "allocationType": "indirect",
+      "unitCost": 1.0,
+      "displayOrder": 0,
+      "color": {
+        "type": "argb",
+        "value": "255,0,0,0"
+      }
+    },
+    {
+      "id": "engineer-1",
+      "name": "Engineer 1",
+      "isExplicitTarget": false,
+      "allocationType": "direct",
+      "unitCost": 1.0,
+      "displayOrder": 0,
+      "color": {
+        "type": "argb",
+        "value": "255,0,0,0"
+      }
+    },
+    {
+      "id": "engineer-2",
+      "name": "Engineer 2",
+      "isExplicitTarget": false,
+      "allocationType": "direct",
+      "unitCost": 1.0,
+      "displayOrder": 0,
+      "color": {
+        "type": "argb",
+        "value": "255,0,0,0"
+      }
+    },
+    {
+      "id": "some-resource",
+      "name": "Some Resource",
+      "isExplicitTarget": false,
+      "allocationType": "none",
+      "unitCost": 1.0,
+      "displayOrder": 0,
+      "color": {
+        "type": "argb",
+        "value": "255,0,0,0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<h2>{{ include.family.name }}</h2>
+
+<div class="schema-family">
+  {% if include.is_summary %}
+  <p>
+    <a href="{{ family.folder }}">{{ family.desc }}</a>
+  </p>
+  {% else %}
+  <p>
+    <a href="#">{{ family.desc }}</a>
+  </p>
+  {% for child in family.children %}
+  <h3>{{child.id}}</h3>
+  <ul>
+    {% for v in child.versions %}
+    <li>{{ v.name }}</li>
+    <ul>
+
+      {% for s in v.schemas %}
+      <li>
+        Schema: <a href="{{ s.path }}">{{ s.fileName }}</a>
+      </li>
+      {% endfor %}
+
+      {% if v.otherFiles and v.otherFiles.size > 0 %}
+      <li>Additional Resources:</li>
+      <ul>
+        {% for s in v.otherFiles %}
+        <li>
+          <a href="{{ s.path }}">{{ s.fileName }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+    </ul>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+
+  <p>
+    <a href="../">[back]</a>
+  </p>
+  {% endif %}
+</div>

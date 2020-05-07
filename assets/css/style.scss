@@ -1,0 +1,86 @@
+---
+---
+
+@import "jekyll-theme-primer";
+
+div.definition {
+  div {
+    margin-bottom: 0.3em;
+  }
+  .word {
+    font-size: 1.2em;
+    display: inline-block;
+  }
+  .pronunciation {
+    font-size: 1.1em;
+    display: inline-block;
+  }
+  .description {
+    font-size: 1em;
+    font-style: italic;
+  }
+  margin-bottom: 1em;
+}
+
+div.schema-family {
+  margin: 1em 0 1em 0;
+  ul li {
+    margin: 0.5em 0 0.5em 0;
+  }
+}
+
+hr {
+  height: 1px !important;
+  color: #eaecef !important;
+}
+
+.last-updated {
+  color: #aaaaaa;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+div.contributor {
+  height: 64px;
+  img {
+    vertical-align: middle;
+    height: 64px;
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+
+.m-bottom-xl {
+  margin-bottom: 5em;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
